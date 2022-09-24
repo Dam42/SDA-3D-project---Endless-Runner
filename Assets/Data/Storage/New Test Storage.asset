@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b76fa20beb747a4ab959d59def938fb, type: 3}
   m_Name: New Test Storage
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 16

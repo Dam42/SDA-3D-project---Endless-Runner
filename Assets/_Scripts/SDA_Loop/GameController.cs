@@ -1,14 +1,25 @@
 using UnityEngine;
 using SDA.Data;
+using SDA.UI;
+using SDA.Score;
 
 namespace SDA.Loop
 {
     public class GameController : MonoBehaviour
     {
         [SerializeField] GameDataStorage gameDataStorage;
+        [SerializeField] UIController uiController;
+        private TimeSystem timeSystem;
         public GameDataStorage GameDataStorage => gameDataStorage;
-
+        public UIController UIController => uiController;
+        public TimeSystem TimeSystem => timeSystem;
+        
         private BaseState currentState;
+
+        private void Awake()
+        {
+            timeSystem = new TimeSystem();
+        }
 
         private void Start()
         {
@@ -35,10 +46,10 @@ namespace SDA.Loop
 
         private void OnDestroy()
         {
-            currentState?.Dispose();
+           // currentState?.Dispose();
         }
 
-        private void ChangeState(BaseState newState)
+        public void ChangeState(BaseState newState)
         {
             currentState?.Dispose();
             currentState = newState;
