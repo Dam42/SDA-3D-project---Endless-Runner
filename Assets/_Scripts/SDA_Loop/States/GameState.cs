@@ -5,6 +5,7 @@ namespace SDA.Loop
         public override void Initialize()
         {
             gameController.UIController.GameView.ShowView();
+            gameController.LevelSpawner.SpawnChunks(5);
         }
 
         public override void Tick()
@@ -15,6 +16,7 @@ namespace SDA.Loop
         public override void FixedTick()
         {
             gameController.TimeSystem.UpdateTime();
+            gameController.PlayerController.MovePlayer();
         }
 
         public override void Dispose()

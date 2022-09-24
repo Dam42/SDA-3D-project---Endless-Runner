@@ -2,6 +2,8 @@ using UnityEngine;
 using SDA.Data;
 using SDA.UI;
 using SDA.Score;
+using SDA.Level;
+using SDA.Player;
 
 namespace SDA.Loop
 {
@@ -9,9 +11,13 @@ namespace SDA.Loop
     {
         [SerializeField] GameDataStorage gameDataStorage;
         [SerializeField] UIController uiController;
+        [SerializeField] LevelSpawner levelSpawner;
+        [SerializeField] PlayerController playerController;
         private TimeSystem timeSystem;
         public GameDataStorage GameDataStorage => gameDataStorage;
         public UIController UIController => uiController;
+        public LevelSpawner LevelSpawner => levelSpawner;
+        public PlayerController PlayerController => playerController;
         public TimeSystem TimeSystem => timeSystem;
         
         private BaseState currentState;
